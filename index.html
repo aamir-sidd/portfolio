@@ -4,17 +4,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Under Construction</title>
+    <title>Portfolio | Aamir</title>
+    <!-- JetBrains Mono Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="status-badge">DNS Propagation in progress...</div>
-        <h1>Coming Soon</h1>
-        <p>I'm building something great here. Stay tuned.</p>
-        <p>The quick brown fox jumps over the lazy dog</p>
-    </div>
+    <nav class="navbar">
+        <div class="logo">./portfolio</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#certificates">Certs</a>
+        </div>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">
+            <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
+    </nav>
+
+    <main>
+        <section id="about" class="hero">
+            <div class="container">
+                <div class="status-badge">Available for Work</div>
+                <h1>I'm Aamir</h1>
+                <p class="subtitle">Software Engineer Intern & Data Science Student</p>
+                <div class="bio">
+                    <p>I build high-performance applications with a focus on AI, Data Science, and Scalable Backend
+                        Systems. Currently pursuing a BSc in Programming and Data Science while interning as a Software
+                        Engineer.</p>
+                </div>
+                <div class="cta-group">
+                    <a href="#experience" class="btn primary">View Experience</a>
+                    <a href="mailto:reach.aamirsiddiqui@gmail.com" class="btn secondary">Get In Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2026</div>
+                        <div class="timeline-content">
+                            <h3>BSc in Programming and Data Science</h3>
+                            <p class="institution">Indian Institute of Technology Madras</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024</div>
+                        <div class="timeline-content">
+                            <h3>BSc (Hons) in Mathematics</h3>
+                            <p class="institution">Aligarh Muslim University</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+                <div class="experience-grid">
+                    <div class="experience-card">
+                        <div class="card-header">
+                            <h3>Software Engineer Intern</h3>
+                            <span class="date">March 2026 — Present</span>
+                        </div>
+                        <p class="company">Nexa Solutions LLC</p>
+                        <p class="description">Developing robust backend solutions and integrating advanced AI
+                            capabilities. Working on scalable architectures and system optimization.</p>
+                    </div>
+                    <div class="experience-card">
+                        <div class="card-header">
+                            <h3>Data Analyst Intern</h3>
+                            <span class="date">Apr 2025 — Jul 2025</span>
+                        </div>
+                        <p class="company">The Next Design</p>
+                        <p class="description">Analyzed complex datasets to derive actionable insights. Leveraged
+                            statistical models and data visualization tools to support business decision-making.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2 class="section-title">Technical Arsenal</h2>
+                <div class="skills-grid">
+                    <div class="skills-category">
+                        <h3>Core</h3>
+                        <div class="tags">
+                            <span>Python</span><span>JavaScript</span><span>SQL</span><span>C</span><span>HTML/CSS</span>
+                        </div>
+                    </div>
+                    <div class="skills-category">
+                        <h3>AI & Data</h3>
+                        <div class="tags">
+                            <span>ML/DL</span><span>RAG</span><span>Vector
+                                DBs</span><span>Pinecone</span><span>FAISS</span><span>LangChain</span><span>MCP
+                                Servers</span>
+                        </div>
+                    </div>
+                    <div class="skills-category">
+                        <h3>Frameworks</h3>
+                        <div class="tags">
+                            <span>FastAPI</span><span>Flask</span>
+                        </div>
+                    </div>
+                    <div class="skills-category">
+                        <h3>Cloud & DB</h3>
+                        <div class="tags">
+                            <span>AWS (EC2, S3)</span><span>GCP Vertex
+                                AI</span><span>PostgreSQL</span><span>Supabase</span><span>Zoho ZeptoMail</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certificates">
+            <div class="container">
+                <h2 class="section-title">Certifications</h2>
+                <ul class="cert-list">
+                    <li>
+                        <span class="cert-name">Professional Certification Placeholder</span>
+                        <span class="cert-issuer">[Issuer Name]</span>
+                    </li>
+                    <li>
+                        <span class="cert-name">Advanced AI Specialist Placeholder</span>
+                        <span class="cert-issuer">[Issuer Name]</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Developed with a technical soul.</p>
+            <div class="social-links">
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
 </body>
 
 </html>
