@@ -5,7 +5,7 @@
     --accent: #000000;
     --accent-light: #f0f0f0;
     --border: #e0e0e0;
-    --grid-color: rgba(0, 0, 0, 0.03);
+    --grid-color: rgba(0, 0, 0, 0.25); /* Bumped up for visibility */
     --status-bg: #e8f5e9;
     --status-text: #2e7d32;
     --font-mono: 'JetBrains Mono', monospace;
@@ -19,7 +19,7 @@
     --accent: #ffffff;
     --accent-light: #1a1a1a;
     --border: #2a2a2a;
-    --grid-color: rgba(255, 255, 255, 0.03);
+    --grid-color: rgba(255, 255, 255, 0.35); /* Bumped up for visibility */
     --status-bg: #1b5e20;
     --status-text: #81c784;
     --navbar-bg: rgba(10, 10, 10, 0.8);
@@ -41,10 +41,8 @@ body {
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
-    background-image: 
-        linear-gradient(var(--grid-color) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-    background-size: 40px 40px;
+    background-image: radial-gradient(var(--grid-color) 2px, transparent 2px);
+    background-size: 30px 30px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -75,6 +73,34 @@ body {
     font-size: 1.25rem;
 }
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header-socials {
+    display: flex;
+    gap: 12px;
+    margin-right: 8px;
+    border-right: 1px solid var(--border);
+    padding-right: 16px;
+}
+
+.header-socials a {
+    color: var(--secondary-text);
+    transition: color 0.2s;
+}
+
+.header-socials a:hover {
+    color: var(--accent);
+}
+
+.header-socials svg {
+    width: 18px;
+    height: 18px;
+}
+
 .nav-links {
     display: flex;
     gap: 20px;
@@ -94,15 +120,15 @@ body {
 
 #theme-toggle {
     background: none;
-    border: 1px solid var(--border);
+    border: 1px solid var(--accent); /* Use accent color for better visibility */
     padding: 8px;
     cursor: pointer;
     border-radius: 4px;
-    color: var(--text);
+    color: var(--accent); /* Explicitly set to accent */
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s;
+    transition: background 0.2s, color 0.2s;
 }
 
 #theme-toggle:hover {
@@ -158,9 +184,48 @@ h1 {
     margin-bottom: 40px;
 }
 
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.hero > * {
+    opacity: 1; /* Ensure visible if JS fails */
+}
+
+/* Typing Cursor Effect */
+.typing-cursor::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+    color: var(--accent);
+    margin-left: 4px;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Ensure stable heights during typing */
+.hero h1 {
+    min-height: 1.2em;
+}
+
+.hero .subtitle {
+    min-height: 1.5em;
+}
+
 .cta-group {
     display: flex;
     gap: 16px;
+    opacity: 0; /* Hidden until typing finishes */
+    transition: opacity 0.5s ease-in;
+}
+
+.cta-group.visible {
+    opacity: 1;
 }
 
 .btn {
@@ -198,6 +263,7 @@ section {
     margin-bottom: 48px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    min-height: 1.2em; /* Ensure stable height for typing */
 }
 
 /* Education Timeline */
@@ -297,6 +363,57 @@ section {
     font-weight: 500;
 }
 
+/* Project Cards */
+.project-grid {
+    display: grid;
+    gap: 32px;
+}
+
+.project-card {
+    padding: 32px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.project-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+}
+
+.project-tags {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.project-bullets {
+    list-style: none;
+    margin-bottom: 24px;
+}
+
+.project-bullets li {
+    font-size: 0.875rem;
+    color: var(--secondary-text);
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.project-bullets li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.btn.sm {
+    padding: 6px 16px;
+    font-size: 0.75rem;
+}
+
 /* Certificates */
 .cert-list {
     list-style: none;
@@ -307,11 +424,26 @@ section {
     border-bottom: 1px dashed var(--border);
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.cert-meta {
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
 
 .cert-issuer {
-    color: var(--secondary-text);
+    color: var(--accent);
+    font-weight: 600;
     font-size: 0.875rem;
+}
+
+.cert-date {
+    color: var(--secondary-text);
+    font-size: 0.75rem;
+    min-width: 80px;
+    text-align: right;
 }
 
 /* Footer */
