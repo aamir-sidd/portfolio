@@ -43,14 +43,18 @@ async function typeWriter(element, text, speed = 60) {
 // Hero Animation (Name only)
 async function initHeroAnimation() {
     const h1 = document.querySelector('.hero h1');
-    if (!h1) return;
+    const heroSocials = document.querySelector('.hero .hero-socials');
+    const bio = document.querySelector('.hero .bio');
+
+    if (!h1 || !heroSocials) return;
 
     const nameText = h1.innerText;
     h1.innerText = ''; // Clear initially
     await typeWriter(h1, nameText, 70);
     
     // Smoothly reveal the rest of the hero
-    document.querySelector('.hero .cta-group').classList.add('visible');
+    bio.style.opacity = '1';
+    heroSocials.classList.add('visible');
 }
 
 // Section Title Observer
